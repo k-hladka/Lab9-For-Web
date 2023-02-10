@@ -1,0 +1,78 @@
+em {
+    font-size: 1.3rem;
+}
+
+h3 {
+    font-size: 2rem;
+    margin: 0 0 0 50%;
+}
+
+.parent1 {
+    padding: 0;
+}
+
+ol {
+    counter-reset: index 0;
+}
+
+.parent1 > li,
+.parent1 > li > ol > li {
+    list-style-type: none;
+    font-size: 1.1rem;
+    font-family: Arial sans-serif;
+    margin: 10px;
+}
+
+.parent1 > li > ol > li {
+    font-size: 1rem;
+}
+
+.parent1 > li::before,
+.parent1 > li > ol > li::before {
+    background: #088104;
+    color: #ceff4e;
+    font-size: 1.8rem;
+    text-align: center;
+    content: counters(index, '.');
+    counter-increment: index 1;
+    box-shadow: 1px 1px 1px #ceff4e,
+    -1px 1px 1px #ceff4e,
+    0 -1px 1px #ceff4e;
+}
+
+.parent1 > li::before,
+.parent1 > li > ol::before {
+    padding: 0 11px;
+}
+
+.parent1 > li:nth-child(2)::before,
+.parent1 > li > ol > li:nth-child(2)::before {
+    background: #fcf117;
+    box-shadow: 2px 2px 1px #201952,
+    -2px 2px 1px #201952,
+    0 -2px 1px #201952;
+    color: #201952;
+}
+.parent2 li{
+    list-style-type: none;
+    display: inline-block;
+    float: left;
+    clear: both;
+    border-bottom: 1px solid #9b9b9b;
+    line-height: 1.5;
+}
+.parent2 li::before{
+    counter-increment: index 1;
+    content: counter(index);
+    background: #10eefc;
+    color: #e3fbfc;
+    font-size: 2rem;
+    padding: 0 10px;
+    border-radius: 50%;
+}
+.parent2{
+    position: relative;
+}
+h3:nth-of-type(2){
+    color: #c2171e;
+}
